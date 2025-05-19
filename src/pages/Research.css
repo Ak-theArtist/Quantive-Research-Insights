@@ -1,0 +1,259 @@
+.research-page {
+  min-height: 100vh;
+}
+
+.research-hero {
+  background-color: #003366;
+  background-image: url('../assets/research-bg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  background-size: cover;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+}
+
+.research-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 51, 102, 0.7);
+  z-index: 1;
+}
+
+.research-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.research-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.research-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.research-intro {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.research-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.research-intro h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.research-intro p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.research-areas {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.research-areas h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.research-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.research-area-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-area-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.research-area-card h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.research-area-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.research-cta {
+  padding: 80px 0;
+  background-color: #003366;
+  color: white;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-buttons .btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.research-cta .btn-primary {
+  background-color: white;
+  color: #003366;
+  border: 2px solid white;
+}
+
+.research-cta .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #003366;
+}
+
+.research-cta .btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.research-cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.cta-buttons .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #004080;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-buttons .btn-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove the previous hover effects */
+.cta-buttons .btn-primary::before,
+.cta-buttons .btn-secondary::before {
+  content: none;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .research-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .research-intro h2,
+  .research-areas h2,
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .research-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .research-intro,
+  .research-areas,
+  .research-cta {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .research-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .research-intro h2,
+  .research-areas h2,
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+}

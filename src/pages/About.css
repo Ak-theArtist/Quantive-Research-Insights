@@ -1,0 +1,523 @@
+.page-header {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.mission, .vision {
+  background-color: var(--light-color);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.mission h3, .vision h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+/* Values Section */
+.values-section {
+  background-color: var(--light-color);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Team Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.member-image {
+  height: 250px;
+  background-color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.member-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 3rem;
+}
+
+.team-member h3 {
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+  padding: 0 20px;
+}
+
+.team-member p {
+  color: var(--text-light);
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 100px 0 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* About Page Styles */
+.about-page {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Header Banner */
+.about-header {
+  position: relative;
+  background-image: url('../assets/about-img.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.about-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 51, 102, 0.7);
+}
+
+.about-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-header h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about-header p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.why-choose-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.why-choose-text {
+  flex: 1;
+}
+
+.why-choose-text h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.why-choose-text p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.why-choose-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.why-choose-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+}
+
+/* Features Grid */
+.features-grid {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.feature-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Audience Section */
+.audience-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+.audience-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.audience-card:hover {
+  transform: translateY(-10px);
+}
+
+.audience-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.audience-content {
+  padding: 30px;
+}
+
+.audience-content h3 {
+  font-size: 1.5rem;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.audience-content p {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Milestones Section */
+.milestones-section {
+  padding: 80px 0;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+}
+
+.milestones-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.milestone-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ff9800;
+}
+
+.milestone-description {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  text-align: left;
+}
+
+.timeline-number {
+  width: 60px;
+  height: 60px;
+  background-color: #ff9800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff9800;
+}
+
+.timeline-content p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Excellence Section */
+.excellence-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.excellence-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.excellence-text {
+  flex: 1;
+}
+
+.excellence-text h2 {
+  font-size: 2.2rem;
+  color: #003366;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.excellence-text p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.excellence-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.excellence-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .why-choose-content,
+  .excellence-content {
+    flex-direction: column;
+  }
+  
+  .why-choose-image,
+  .excellence-image {
+    max-width: 100%;
+    order: -1;
+    margin-bottom: 30px;
+  }
+  
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    height: 300px;
+  }
+  
+  .about-header h1 {
+    font-size: 3rem;
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+  }
+  
+  .why-choose-text h2,
+  .milestones-section h2,
+  .excellence-text h2 {
+    font-size: 2rem;
+  }
+  
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+  }
+  
+  .timeline-number {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .milestone-subtitle {
+    font-size: 1.2rem;
+  }
+}
