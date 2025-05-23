@@ -116,6 +116,7 @@
 }
 
 .hamburger {
+  display: flex;
   width: 30px;
   height: 3px;
   background-color: white;
