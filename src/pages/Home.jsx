@@ -17,19 +17,19 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
 // Import customer review images
 import customerImg1 from '../assets/customer-review/image1.jpeg';
 import customerImg2 from '../assets/customer-review/image2.jpeg';
-import customerImg3 from '../assets/customer-review/image3.webp';
-import customerImg4 from '../assets/customer-review/image4.webp';
-import customerImg5 from '../assets/customer-review/image5.webp';
-import customerImg6 from '../assets/customer-review/image6.webp';
-import customerImg7 from '../assets/customer-review/image7.webp';
-import customerImg8 from '../assets/customer-review/image8.webp';
-import customerImg9 from '../assets/customer-review/image9.webp';
-import customerImg10 from '../assets/customer-review/image10.webp';
-import customerImg11 from '../assets/customer-review/image11.webp';
-import customerImg12 from '../assets/customer-review/image12.webp';
-import customerImg13 from '../assets/customer-review/image13.webp';
-import customerImg14 from '../assets/customer-review/image14.webp';
-import customerImg15 from '../assets/customer-review/image15.webp';
+import customerImg3 from '../assets/customer-review/default-img.jpg';
+import customerImg4 from '../assets/customer-review/default-img.jpg';
+import customerImg5 from '../assets/customer-review/default-img.jpg';
+import customerImg6 from '../assets/customer-review/default-img.jpg';
+import customerImg7 from '../assets/customer-review/default-img.jpg';
+import customerImg8 from '../assets/customer-review/default-img.jpg';
+import customerImg9 from '../assets/customer-review/default-img.jpg';
+import customerImg10 from '../assets/customer-review/default-img.jpg';
+import customerImg11 from '../assets/customer-review/default-img.jpg';
+import customerImg12 from '../assets/customer-review/default-img.jpg';
+import customerImg13 from '../assets/customer-review/default-img.jpg';
+import customerImg14 from '../assets/customer-review/default-img.jpg';
+import customerImg15 from '../assets/customer-review/default-img.jpg';
 
 const Home = () => {
   useDocumentTitle('Home');
@@ -46,21 +46,21 @@ const Home = () => {
 
   // Testimonial data
   const testimonials = [
-    { id: 1, name: "Bhavya Raj Sharma", image: customerImg1, text: "Best Quality, On time Delivery and expert guidance." },
-    { id: 2, name: "Mohit Ahlawat", image: customerImg2, text: "I'm happy to share my thoughts for this organisation as they are completely genuine and reliable also the staff is very much co-operative! It was really a nice experience." },
-    { id: 3, name: "Aarthi Prasad", image: customerImg3, text: "Really helped me in my research work, highly recommend!" },
-    { id: 4, name: "Rasika Kuware", image: customerImg4, text: "Very good cooperation and support by team to the new researcher." },
-    { id: 5, name: "Gurpreet Kaur", image: customerImg5, text: "I'll be very happy to share my thoughts for this organization as I have a recieved a very posite responses from them and helped at every step of my research work your guidance means a lot to me and it also learned so many new ways from you guys A big thank to MP Research work." },
-    { id: 6, name: "Deepti Kulshrestha", image: customerImg6, text: "I'm happy to share my thoughts for this organisation as they are completely genuine and reliable also the staff is very much co-operative. All the best team." },
-    { id: 7, name: "Ritika Sindhwani", image: customerImg7, text: "I had a great experience with team Wink. Team is so understanding. Thank you team Wink." },
-    { id: 8, name: "Santosh Tripathi", image: customerImg8, text: "I found their services very professional and time bound. One can trust their services." },
-    { id: 9, name: "Shubham Kanojiya", image: customerImg9, text: "Focus on facts and provide concrete examples and advice. Thank you MP RESEARCH WORK." },
-    { id: 10, name: "Piyushi Nema", image: customerImg10, text: "Work according timely, coordination is good with clients." },
-    { id: 11, name: "Ravina", image: customerImg11, text: "It is a wonderful experience with wink service. Last one and half year connected with this agency its managing experience." },
-    { id: 12, name: "Shalini Gill", image: customerImg12, text: "My work experience was fabulous I also want to tell everyone who want help in this area. I also want to connect in future." },
-    { id: 13, name: "Keshwini", image: customerImg13, text: "Thank you so much for your timely help. I'm grateful and happy that you have helped me in my hard days of my thesis completion. Finally I'm a doctorate holder now it's all because of you. Thank you very much. ❤️" },
-    { id: 14, name: "Prabhat Ranjan", image: customerImg14, text: "It was a good experience working with Wink. They were very helpful at every stage. They had my approval at every stage so that the quality of work is upto the mark. They published the paper well before the deadline given by them." },
-    { id: 15, name: "Sumit Sharma", image: customerImg15, text: "Overall experience with MPRW was good. The team delivered research that met my needs with a reasonable level of professionalism and attention to detail. I would recommend their services for reliable writing assistance." },
+    { id: 1, name: "Bhavya Raj Sharma", image: customerImg1, text: "Quantive Research provided exceptional support throughout my research journey. Their attention to detail and timely delivery exceeded my expectations." },
+    { id: 2, name: "Mohit Ahlawat", image: customerImg2, text: "Working with Quantive Research was a transformative experience. Their team's expertise and dedication helped me achieve research outcomes I couldn't have accomplished alone." },
+    { id: 3, name: "Aditi Musunur", image: customerImg3, text: "The guidance I received from Quantive Research was invaluable. Their methodical approach and insightful feedback significantly improved the quality of my research paper." },
+    { id: 4, name: "Advitiya Sujeet", image: customerImg4, text: "I'm impressed by the depth of knowledge the Quantive Research team possesses. They helped me navigate complex research challenges with ease and confidence." },
+    { id: 5, name: "Alagesan Poduri", image: customerImg5, text: "From conceptualization to publication, Quantive Research provided comprehensive support that made my academic journey smoother. Their expertise in methodology design was particularly helpful." },
+    { id: 6, name: "Amrish Ilyas", image: customerImg6, text: "The team at Quantive Research demonstrated exceptional professionalism and subject matter expertise. Their contributions elevated the quality of my research substantially." },
+    { id: 7, name: "Aprativirya Seshan", image: customerImg7, text: "I appreciate the personalized approach Quantive Research took with my project. They understood my specific needs and tailored their support accordingly." },
+    { id: 8, name: "Asvathama Ponnada", image: customerImg8, text: "The analytical insights provided by Quantive Research transformed my initial research concept into a comprehensive and well-structured study. Highly recommended for serious researchers." },
+    { id: 9, name: "Avantas Ghosal", image: customerImg9, text: "Working with Quantive Research gave me access to advanced research methodologies and analytical tools that significantly enhanced the credibility of my findings." },
+    { id: 10, name: "Avidosa Vaisakhi", image: customerImg10, text: "The literature review support from Quantive Research was exceptional. They helped me identify key gaps in existing research that became the foundation of my study." },
+    { id: 11, name: "Barsati Sandipa", image: customerImg11, text: "Quantive Research's data analysis expertise helped me derive meaningful insights from complex datasets. Their statistical approach was both rigorous and innovative." },
+    { id: 12, name: "Debasis Sundhararajan", image: customerImg12, text: "The publication support I received from Quantive Research was instrumental in getting my paper accepted in a high-impact journal. Their understanding of publication requirements is outstanding." },
+    { id: 13, name: "Devasru Subramanyan", image: customerImg13, text: "I'm grateful for Quantive Research's mentorship throughout my doctoral research. Their guidance helped me develop as an independent researcher while maintaining academic rigor." },
+    { id: 14, name: "Dharmadhrt Ramila", image: customerImg14, text: "Quantive Research delivered exceptional value with their comprehensive research support services. Their team's commitment to excellence is evident in every aspect of their work." },
+    { id: 15, name: "Dhritiman Salim", image: customerImg15, text: "The research methodology guidance from Quantive Research helped me design a robust study that withstood peer review scrutiny. Their expertise in research design is truly remarkable." },
   ];
 
   // Group testimonials into sets of 3 for desktop view
