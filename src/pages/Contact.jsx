@@ -103,7 +103,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Phone</h3>
-                    <p>+91-XXXXXXXXXX</p>
+                    <p>+91-74175 77804</p>
                   </div>
                 </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Email</h3>
-                    <p>info@quantiveresearch.com</p>
+                    <p>support@quantiveresearchinsights.com</p>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Working Hours</h3>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>

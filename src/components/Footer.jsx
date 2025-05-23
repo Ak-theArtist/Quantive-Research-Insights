@@ -35,8 +35,8 @@ const Footer = () => {
           
           <div className="footer-contact">
             <h4>Contact Us</h4>
-            <p><strong>Email:</strong> info@quantiveresearch.com</p>
-            <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+            <p><strong>Email:</strong> support@quantiveresearchinsights.com</p>
+            <p><strong>Phone:</strong> +91-74175 77804</p>
             <p><strong>Address:</strong> 123 Research Avenue, India</p>
           </div>
         </div>

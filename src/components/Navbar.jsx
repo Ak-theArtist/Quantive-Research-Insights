@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isServicesPage = location.pathname === '/services';
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true);
+        setIsScrolled(true);
       } else {
-        setScrolled(false);
+        setIsScrolled(false);
       }
     };
 
@@ -21,33 +22,72 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
-  // Function to check if a path is active
-  const isActive = (path) => {
-    return location.pathname === path;
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src={logo} alt="Quantive Research Logo" className="logo-image" />
+          <img src={logo} alt="Quantive Research Insights" className="logo-image" />
           <span>Quantive Research Insights</span>
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
-          <div className={`hamburger ${isOpen ? 'open' : ''}`}></div>
+          <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}></div>
         </div>
 
-        <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <li><Link to="/" className={isActive('/') ? 'active-link' : ''} onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/about" className={isActive('/about') ? 'active-link' : ''} onClick={() => setIsOpen(false)}>About Us</Link></li>
-          <li><Link to="/services" className={isActive('/services') ? 'active-link' : ''} onClick={() => setIsOpen(false)}>Services</Link></li>
-          <li><Link to="/research" className={isActive('/research') ? 'active-link' : ''} onClick={() => setIsOpen(false)}>Research</Link></li>
-          <li><Link to="/contact" className={isActive('/contact') ? 'active-link' : ''} onClick={() => setIsOpen(false)}>Contact</Link></li>
+        <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+          <li>
+            <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'active-link' : ''}>
+              About
+            </NavLink>
+          </li>
+          <li className={`has-dropdown ${isServicesPage ? 'no-dropdown' : ''}`}>
+            <NavLink to="/services" className={({ isActive }) => isActive ? 'active-link' : ''}>
+              Services
+            </NavLink>
+            {!isServicesPage && (
+              <div className="dropdown-menu">
+                <div className="dropdown-content">
+                  <div className="dropdown-column">
+                    <h3>Research Services</h3>
+                    <Link to="/services#topic-selection">Topic Selection</Link>
+                    <Link to="/services#research-proposal">Research Proposal</Link>
+                    <Link to="/services#thesis-writing">Thesis Writing</Link>
+                    <Link to="/services#dissertation">Dissertation</Link>
+                  </div>
+                  <div className="dropdown-column">
+                    <h3>Publication Services</h3>
+                    <Link to="/services#research-paper">Research Paper</Link>
+                    <Link to="/services#review-paper">Review Paper</Link>
+                    <Link to="/services#proofreading">Proofreading</Link>
+                    <Link to="/services#publication-assistance">Publication Assistance</Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </li>
+          <li>
+            <NavLink to="/research" className={({ isActive }) => isActive ? 'active-link' : ''}>
+              Research
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-link' : ''}>
+              Contact
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>

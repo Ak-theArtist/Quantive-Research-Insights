@@ -102,59 +102,6 @@ const About = () => {
         </div>
       </section>
       
-      {/* Key Milestones */}
-      <section className="section milestones-section">
-        <div className="container">
-          <h2>Key Milestones</h2>
-          <p className="milestone-subtitle">From Modest Beginnings to Global Aspirations</p>
-          <p className="milestone-description">
-            Our journey began well before we became the leaders in research innovation. Every step has been about overcoming challenges, learning, and continually striving to simplify the research process.
-          </p>
-          
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-number">1</div>
-              <div className="timeline-content">
-                <h3>2014</h3>
-                <p>MP SQUARE IT Solutions was founded under proprietorship. A small but determined team set out to provide IT solutions to researchers, sparking the beginning of our journey.</p>
-              </div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-number">2</div>
-              <div className="timeline-content">
-                <h3>2017</h3>
-                <p>We achieved a breakthrough, refining our processes and expanding our reach, setting the foundation for bigger goals to make research easier, faster, and more effective.</p>
-              </div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-number">3</div>
-              <div className="timeline-content">
-                <h3>2020</h3>
-                <p>With the onset of the COVID-19 pandemic, MP Square transformed into MP Research Work, expanding our services to cater to both academic and corporate clients. We became a comprehensive resource for research, data-driven insights, and analysis.</p>
-              </div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-number">4</div>
-              <div className="timeline-content">
-                <h3>2023</h3>
-                <p>We hit a huge milestone: 10,000+ clients joined us on our journey. Our innovation continued with the development of ReqRev (your personal research assistant).</p>
-              </div>
-            </div>
-            
-            <div className="timeline-item">
-              <div className="timeline-number">5</div>
-              <div className="timeline-content">
-                <h3>2026</h3>
-                <p>As we look ahead, we aim to become a global leader in emerging research fields, empowering scholars and businesses worldwide with cutting-edge tools and methodologies.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* Research Excellence */}
       <section className="section excellence-section">
         <div className="container">

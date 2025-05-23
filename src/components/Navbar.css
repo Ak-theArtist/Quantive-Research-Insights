@@ -27,15 +27,16 @@
   text-decoration: none;
   color: white;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: color 0.3s ease;
 }
 
 .logo-image {
-  height: 40px;
+  height: 80px;
   width: auto;
   margin-right: 10px;
   border-radius: 5px;
+  border-radius: 50%;
 }
 
 .navbar.scrolled .navbar-logo {
@@ -221,7 +222,6 @@
     height: 35px;
   }
   
-  /* Improve mobile menu animation */
   .navbar-menu.active li {
     animation: fadeInRight 0.5s ease forwards;
     opacity: 0;
@@ -245,7 +245,6 @@
   }
 }
 
-/* Add styles for smaller mobile devices */
 @media (max-width: 480px) {
   .navbar-container {
     padding: 0 10px;
@@ -264,9 +263,6 @@
   }
 }
 
-
-/* Add these styles to your existing Navbar.css file */
-
 .navbar-menu li a.active-link {
   color: #4a90e2;
   font-weight: 600;
@@ -284,7 +280,6 @@
   transition: width 0.3s ease;
 }
 
-/* Enhance hover effect for all links */
 .navbar-menu li a {
   position: relative;
   transition: color 0.3s ease;
@@ -310,5 +305,78 @@
   .navbar-menu li a.active-link::after,
   .navbar-menu li a::after {
     bottom: 0;
+  }
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown:not(.active-link) .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 500px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.has-dropdown:not(.active-link):hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content {
+  display: flex;
+  gap: 30px;
+}
+
+.dropdown-column {
+  flex: 1;
+}
+
+.dropdown-column h3 {
+  color: #003366;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #003366;
+}
+
+.dropdown-column a {
+  display: block;
+  color: #333 !important; 
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.dropdown-column a:hover {
+  color: #003366 !important;
+  transform: translateX(5px);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    display: none;
   }
 }

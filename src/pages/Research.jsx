@@ -41,24 +41,57 @@ const Research = () => {
           <h2>Research Areas</h2>
           <div className="research-areas-grid">
             <div className="research-area-card">
-              <h3>Business & Management</h3>
+              <h3>🔬 Life Sciences & Biomedical Research</h3>
               <p>
-                Strategic management, organizational behavior, marketing research, 
-                consumer behavior, and business analytics.
+                Molecular biology, genetics, immunology, clinical research, and healthcare innovations.
               </p>
             </div>
             <div className="research-area-card">
-              <h3>Technology & Innovation</h3>
+              <h3>🧪 Chemical & Pharmaceutical Sciences</h3>
               <p>
-                Digital transformation, artificial intelligence, blockchain, 
-                Internet of Things, and technology adoption.
+                Drug discovery, medicinal chemistry, formulation development, and analytical techniques.
               </p>
             </div>
             <div className="research-area-card">
-              <h3>Sustainability & Environment</h3>
+              <h3>🧠 Psychology & Social Sciences</h3>
               <p>
-                Sustainable business practices, environmental impact assessment, 
-                circular economy, and climate change mitigation.
+                Behavioral studies, cognitive psychology, social dynamics, and qualitative research methods.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>💻 Computer Science & Data Analytics</h3>
+              <p>
+                Machine learning, artificial intelligence, big data analysis, and software engineering.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>🌱 Environmental & Agricultural Sciences</h3>
+              <p>
+                Sustainability, climate research, crop improvement, and ecological conservation.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>🧰 Engineering & Technology</h3>
+              <p>
+                Mechanical systems, electrical engineering, materials science, and innovative technologies.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>📊 Business, Finance & Management</h3>
+              <p>
+                Market analysis, financial modeling, organizational behavior, and strategic management.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>📚 Education & Linguistics</h3>
+              <p>
+                Pedagogical methods, language acquisition, curriculum development, and educational technology.
+              </p>
+            </div>
+            <div className="research-area-card">
+              <h3>⚖️ Legal & Ethical Studies</h3>
+              <p>
+                Regulatory frameworks, ethical considerations in research, compliance, and policy analysis.
               </p>
             </div>
           </div>

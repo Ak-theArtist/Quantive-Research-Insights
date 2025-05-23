@@ -17,8 +17,8 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
 // Import customer review images
 import customerImg1 from '../assets/customer-review/image1.jpeg';
 import customerImg2 from '../assets/customer-review/image2.jpeg';
-import customerImg3 from '../assets/customer-review/default-img.jpg';
-import customerImg4 from '../assets/customer-review/default-img.jpg';
+import customerImg3 from '../assets/customer-review/image3.jpeg';
+import customerImg4 from '../assets/customer-review/image4.jpeg';
 import customerImg5 from '../assets/customer-review/default-img.jpg';
 import customerImg6 from '../assets/customer-review/default-img.jpg';
 import customerImg7 from '../assets/customer-review/default-img.jpg';
@@ -48,8 +48,8 @@ const Home = () => {
   const testimonials = [
     { id: 1, name: "Bhavya Raj Sharma", image: customerImg1, text: "Quantive Research provided exceptional support throughout my research journey. Their attention to detail and timely delivery exceeded my expectations." },
     { id: 2, name: "Mohit Ahlawat", image: customerImg2, text: "Working with Quantive Research was a transformative experience. Their team's expertise and dedication helped me achieve research outcomes I couldn't have accomplished alone." },
-    { id: 3, name: "Aditi Musunur", image: customerImg3, text: "The guidance I received from Quantive Research was invaluable. Their methodical approach and insightful feedback significantly improved the quality of my research paper." },
-    { id: 4, name: "Advitiya Sujeet", image: customerImg4, text: "I'm impressed by the depth of knowledge the Quantive Research team possesses. They helped me navigate complex research challenges with ease and confidence." },
+    { id: 3, name: "Ritu Chaudhary", image: customerImg3, text: "The guidance I received from Quantive Research was invaluable. Their methodical approach and insightful feedback significantly improved the quality of my research paper." },
+    { id: 4, name: "Dolby Chaudhary", image: customerImg4, text: "I'm impressed by the depth of knowledge the Quantive Research team possesses. They helped me navigate complex research challenges with ease and confidence." },
     { id: 5, name: "Alagesan Poduri", image: customerImg5, text: "From conceptualization to publication, Quantive Research provided comprehensive support that made my academic journey smoother. Their expertise in methodology design was particularly helpful." },
     { id: 6, name: "Amrish Ilyas", image: customerImg6, text: "The team at Quantive Research demonstrated exceptional professionalism and subject matter expertise. Their contributions elevated the quality of my research substantially." },
     { id: 7, name: "Aprativirya Seshan", image: customerImg7, text: "I appreciate the personalized approach Quantive Research took with my project. They understood my specific needs and tailored their support accordingly." },
