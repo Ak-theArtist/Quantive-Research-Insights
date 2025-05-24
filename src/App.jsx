@@ -8,11 +8,13 @@ import Services from './pages/Services';
 import Research from './pages/Research';
 import Contact from './pages/Contact';
 import ContactModal from './components/ContactModal';
+import Loader from './components/Loader'; 
 import './App.css';
 import './styles/animations.css'; 
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     // Show modal after 8 seconds
@@ -21,6 +23,14 @@ function App() {
     }, 8000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const loaderTimer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   useEffect(() => {
@@ -72,21 +82,25 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-        <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="app">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+          <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
+        </div>
+      )}
     </Router>
   );
 }
