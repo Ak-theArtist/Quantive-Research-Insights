@@ -1,0 +1,101 @@
+/* Animation Utilities */
+.animate {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+/* Animation is active when element is in viewport */
+.animate.active {
+  opacity: 1;
+}
+
+/* Fade Up Animation */
+.fade-up {
+  transform: translateY(40px);
+}
+.fade-up.active {
+  transform: translateY(0);
+}
+
+/* Fade Down Animation */
+.fade-down {
+  transform: translateY(-40px);
+}
+.fade-down.active {
+  transform: translateY(0);
+}
+
+/* Fade Left Animation */
+.fade-left {
+  transform: translateX(-40px);
+}
+.fade-left.active {
+  transform: translateX(0);
+}
+
+/* Fade Right Animation */
+.fade-right {
+  transform: translateX(40px);
+}
+.fade-right.active {
+  transform: translateX(0);
+}
+
+/* Scale Animation */
+.scale {
+  transform: scale(0.8);
+}
+.scale.active {
+  transform: scale(1);
+}
+
+/* Delay Classes */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+.delay-200 {
+  transition-delay: 0.2s;
+}
+.delay-300 {
+  transition-delay: 0.3s;
+}
+.delay-400 {
+  transition-delay: 0.4s;
+}
+.delay-500 {
+  transition-delay: 0.5s;
+}
+.delay-600 {
+  transition-delay: 0.6s;
+}
+.delay-700 {
+  transition-delay: 0.7s;
+}
+.delay-800 {
+  transition-delay: 0.8s;
+}
+
+/* Duration Classes */
+.duration-slow {
+  transition-duration: 1.2s;
+}
+.duration-fast {
+  transition-duration: 0.5s;
+}
+.delay-600 {
+  transition-delay: 0.6s;
+}
+.delay-700 {
+  transition-delay: 0.7s;
+}
+.delay-800 {
+  transition-delay: 0.8s;
+}
+
+/* Duration Classes */
+.duration-slow {
+  transition-duration: 1.2s;
+}
+.duration-fast {
+  transition-duration: 0.5s;
+}

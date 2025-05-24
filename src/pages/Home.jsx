@@ -13,6 +13,7 @@ import authenticityIcon from '../assets/Authenticity-icon.png';
 import publicationIcon from '../assets/publication-icon.png';
 import visionMissionImage from '../assets/our-vision.png';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import useAnimation from '../hooks/useAnimation';
 
 // Import customer review images
 import customerImg1 from '../assets/customer-review/image1.jpeg';
@@ -33,6 +34,8 @@ import customerImg15 from '../assets/customer-review/default-img.jpg';
 
 const Home = () => {
   useDocumentTitle('Home');
+  useAnimation(); // Add animation hook
+
   const [currentImage, setCurrentImage] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const maxSlides = 5; // Total number of slide groups

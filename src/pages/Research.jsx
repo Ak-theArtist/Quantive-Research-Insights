@@ -2,25 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Research.css';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import useAnimation from '../hooks/useAnimation';
 
 const Research = () => {
   useDocumentTitle('Research');
+  useAnimation(); 
 
   return (
     <div className="research-page">
       <div className="research-hero">
         <div className="research-hero-overlay"></div>
         <div className="container">
-          <h1>Research Excellence</h1>
-          <p>Driving innovation through rigorous research methodologies and data-driven insights</p>
+          <h1 className="animate fade-down">Research Excellence</h1>
+          <p className="animate fade-up delay-200">Driving innovation through rigorous research methodologies and data-driven insights</p>
         </div>
       </div>
 
       <section className="research-intro">
         <div className="container">
-          <div className="research-intro-content">
+          <div className="research-intro-content animate fade-up">
             <h2>Our Research Approach</h2>
-            <p>
+            <p className="animate fade-up delay-100">
               At Quantive Research Insights, we are committed to advancing knowledge through 
               rigorous research methodologies and innovative approaches. Our team of experienced 
               researchers combines academic expertise with practical insights to deliver 
@@ -38,15 +40,15 @@ const Research = () => {
 
       <section className="research-areas">
         <div className="container">
-          <h2>Research Areas</h2>
+          <h2 className="animate fade-up">Research Areas</h2>
           <div className="research-areas-grid">
-            <div className="research-area-card">
+            <div className="research-area-card animate fade-up delay-100">
               <h3>🔬 Life Sciences & Biomedical Research</h3>
               <p>
                 Molecular biology, genetics, immunology, clinical research, and healthcare innovations.
               </p>
             </div>
-            <div className="research-area-card">
+            <div className="research-area-card animate fade-up delay-200">
               <h3>🧪 Chemical & Pharmaceutical Sciences</h3>
               <p>
                 Drug discovery, medicinal chemistry, formulation development, and analytical techniques.

@@ -9,6 +9,7 @@ import Research from './pages/Research';
 import Contact from './pages/Contact';
 import ContactModal from './components/ContactModal';
 import './App.css';
+import './styles/animations.css'; 
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -26,17 +27,17 @@ function App() {
     // Tawk.to Live Chat Integration
     var Tawk_API = window.Tawk_API || {};
     var Tawk_LoadStart = new Date();
-
+    
     var s1 = document.createElement("script");
     s1.async = true;
     s1.src = 'https://embed.tawk.to/68309fd28169ba190d611f04/1iruv0jvh';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
-
-    s1.onload = function () {
+    
+    s1.onload = function() {
       if (window.Tawk_API) {
         const isMobile = window.innerWidth <= 768;
-
+        
         if (!isMobile) {
           // Desktop settings
           window.Tawk_API.customStyle = {
@@ -49,8 +50,8 @@ function App() {
             },
             zIndex: 1000,
             widget: {
-              shadow: '0 0 4px 20px rgba(0, 0, 0, 0.53)',
-              border: '10px solid rgb(255, 255, 255)'
+              shadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
+              border: '1px solid rgba(255, 255, 255, 0.2)'
             },
             bubble: {
               shadow: '0 4px 20px rgba(0, 0, 0, 0.25)'
@@ -59,7 +60,7 @@ function App() {
         }
       }
     };
-
+    
     document.body.appendChild(s1);
 
     return () => {
