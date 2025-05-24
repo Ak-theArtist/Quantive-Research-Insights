@@ -131,9 +131,10 @@ const Contact = () => {
 
               <div className="social-links">
                 <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
+
+                <a href="https://www.instagram.com/quantive_research_insights/?igsh=MTRyZGN6ZW54YjVkaA%3D%3D&utm_source=qr" className="social-link" target='_blank'><i className="fab fa-instagram"></i></a>
                 {/* <a href="#" className="social-link"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-instagram"></i></a> */}
+                <a href="#" className="social-link"><i className="fab fa-twitter"></i></a> */}
               </div>
             </div>
 
