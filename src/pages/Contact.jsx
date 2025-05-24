@@ -93,7 +93,8 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Address</h3>
-                    <p>123 Research Avenue, Mathura, UP, India</p>
+                    <p>Sanjay Palace near Hari Parwat Choraha, Agra, Uttar Pradesh</p>
+                    <p>Pin-Code: 282002</p>
                   </div>
                 </div>
 
@@ -113,7 +114,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Email</h3>
-                    <p>support@quantiveresearchinsights.com</p>
+                    <p>quantiveresearchinsights@gmail.com</p>
                   </div>
                 </div>
 
@@ -131,8 +132,8 @@ const Contact = () => {
               <div className="social-links">
                 <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
                 <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
+                {/* <a href="#" className="social-link"><i className="fab fa-linkedin-in"></i></a>
+                <a href="#" className="social-link"><i className="fab fa-instagram"></i></a> */}
               </div>
             </div>
 
@@ -216,13 +217,13 @@ const Contact = () => {
       <section className="map-section">
         <div className="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56476.39758307574!2d77.63824505!3d27.4924525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3973e4d9fae66c1d%3A0xed9eac47483c28a0!2sMathura%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1684567890123!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14231.205162195803!2d78.0042035!3d27.1902135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747738c3f4d153%3A0x9b18c6a3693884fd!2sSanjay%20Palace%2C%20Hari%20Parwat%2C%20Agra%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1716554321987!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            title="Our Location in Mathura"
+            title="Our Location in Agra"
           ></iframe>
         </div>
       </section>

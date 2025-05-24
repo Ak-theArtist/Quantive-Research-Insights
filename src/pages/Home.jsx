@@ -225,21 +225,21 @@ const Home = () => {
 
               <div className="stats-container">
                 <div className="stat-item">
-                  <h4>11355+</h4>
+                  <h4>200+</h4>
                   <p>CLIENTS</p>
                 </div>
                 <div className="stat-item">
-                  <h4>150+</h4>
+                  <h4>50+</h4>
                   <p>RESEARCHERS</p>
                 </div>
                 <div className="stat-item">
-                  <h4>12+</h4>
+                  <h4>35+</h4>
                   <p>SERVICES</p>
                 </div>
-                <div className="stat-item">
+                {/* <div className="stat-item">
                   <h4>4+</h4>
                   <p>PRODUCTS</p>
-                </div>
+                </div> */}
               </div>
             </div>
 

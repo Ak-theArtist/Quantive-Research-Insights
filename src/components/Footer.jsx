@@ -35,9 +35,10 @@ const Footer = () => {
           
           <div className="footer-contact">
             <h4>Contact Us</h4>
-            <p><strong>Email:</strong> support@quantiveresearchinsights.com</p>
+            <p><strong>Email:</strong> quantiveresearchinsights@gmail.com</p>
             <p><strong>Phone:</strong> +91-74175 77804</p>
-            <p><strong>Address:</strong> 123 Research Avenue, India</p>
+            <p><strong>Address:</strong> Sanjay Palace near Hari Parwat Choraha, Agra, Uttar Pradesh</p>
+            <p><strong>Pin-Code:</strong> 282002</p>
           </div>
         </div>
         
