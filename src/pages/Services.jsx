@@ -6,7 +6,7 @@ import useAnimation from '../hooks/useAnimation';
 import researchIcon from '../assets/research-icon.png';
 import editingIcon from '../assets/editing-icon.png';
 import reviewIcon from '../assets/review-icon.png';
-import authenticityIcon from '../assets/authenticity-icon.png';
+import authenticityIcon from '../assets/Authenticity-icon.png';
 import publicationIcon from '../assets/publication-icon.png';
 
 const Services = () => {
