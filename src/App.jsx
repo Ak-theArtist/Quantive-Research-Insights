@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -9,19 +9,32 @@ import Research from './pages/Research';
 import Contact from './pages/Contact';
 import ContactModal from './components/ContactModal';
 import Loader from './components/Loader'; 
+import ReactPixel from 'react-facebook-pixel'; // ✅ Added
 import './App.css';
 import './styles/animations.css'; 
 
-function App() {
+function usePageTracking() {
+  const location = useLocation();
+  useEffect(() => {
+    ReactPixel.pageView();
+  }, [location]);
+}
+
+function AppWrapper() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true); 
 
+  usePageTracking(); // ✅ Added for route tracking
+
   useEffect(() => {
-    // Show modal after 8 seconds
+    ReactPixel.init('24308846782072737'); // ✅ Initialize Pixel
+    ReactPixel.pageView(); // ✅ First page load
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 8000);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,27 +42,22 @@ function App() {
     const loaderTimer = setTimeout(() => {
       setLoading(false);
     }, 3000);
-
     return () => clearTimeout(loaderTimer);
   }, []);
 
   useEffect(() => {
-    // Tawk.to Live Chat Integration
     var Tawk_API = window.Tawk_API || {};
     var Tawk_LoadStart = new Date();
-    
     var s1 = document.createElement("script");
     s1.async = true;
     s1.src = 'https://embed.tawk.to/68309fd28169ba190d611f04/1iruv0jvh';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
-    
+
     s1.onload = function() {
       if (window.Tawk_API) {
         const isMobile = window.innerWidth <= 768;
-        
         if (!isMobile) {
-          // Desktop settings
           window.Tawk_API.customStyle = {
             visibility: {
               desktop: {
@@ -70,9 +78,8 @@ function App() {
         }
       }
     };
-    
-    document.body.appendChild(s1);
 
+    document.body.appendChild(s1);
     return () => {
       if (document.body.contains(s1)) {
         document.body.removeChild(s1);
@@ -81,7 +88,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       {loading ? (
         <Loader />
       ) : (
@@ -101,6 +108,14 @@ function App() {
           <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
         </div>
       )}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
     </Router>
   );
 }
