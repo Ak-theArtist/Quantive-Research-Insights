@@ -8,10 +8,10 @@ import Services from './pages/Services';
 import Research from './pages/Research';
 import Contact from './pages/Contact';
 import ContactModal from './components/ContactModal';
-import Loader from './components/Loader'; 
+import Loader from './components/Loader';
 import ReactPixel from 'react-facebook-pixel'; // ✅ Added
 import './App.css';
-import './styles/animations.css'; 
+import './styles/animations.css';
 
 function usePageTracking() {
   const location = useLocation();
@@ -22,7 +22,7 @@ function usePageTracking() {
 
 function AppWrapper() {
   const [showModal, setShowModal] = useState(false);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   usePageTracking(); // ✅ Added for route tracking
 
@@ -54,7 +54,7 @@ function AppWrapper() {
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
 
-    s1.onload = function() {
+    s1.onload = function () {
       if (window.Tawk_API) {
         const isMobile = window.innerWidth <= 768;
         if (!isMobile) {
