@@ -95,8 +95,8 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Address</h3>
-                    <p>Sanjay Palace near Hari Parwat Choraha, Agra, Uttar Pradesh</p>
-                    <p>Pin-Code: 282002</p>
+                    <p>Shop No 14, 1st Floor, Kaushiki Tower, In Front Of New Bus Stand Work Shop, Near State Bank Choraha, Mathura, Uttar Pradesh</p>
+                    <p>Pin-Code: 281001</p>
                   </div>
                 </div>
 
