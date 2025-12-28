@@ -275,18 +275,18 @@ const Home = () => {
               <div className="vision-block">
                 <h2 className="vision-title">OUR VISION</h2>
                 <p>
-                  <strong>Our Vision</strong> is to be a leading partner for corporates and scholars alike, empowering 
-                  innovation, growth, and academic excellence through data-driven insights, strategic 
+                  <strong>Our Vision</strong> is to be a leading partner for corporates and scholars alike, empowering
+                  innovation, growth, and academic excellence through data-driven insights, strategic
                   research, and comprehensive support.
                 </p>
               </div>
-              
+
               <div className="mission-block">
                 <h2 className="mission-title">OUR MISSION</h2>
                 <p>
-                  <strong>Our Mission</strong> is to deliver data-driven insights and strategic research support to 
-                  businesses, ensuring they stay ahead in their industries. Simultaneously, we provide 
-                  research scholars with comprehensive guidance, offering structured outlines and expert 
+                  <strong>Our Mission</strong> is to deliver data-driven insights and strategic research support to
+                  businesses, ensuring they stay ahead in their industries. Simultaneously, we provide
+                  research scholars with comprehensive guidance, offering structured outlines and expert
                   document reviews to facilitate their academic success.
                 </p>
               </div>
@@ -321,7 +321,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="carousel-navigation">
               <button className="carousel-arrow prev" onClick={handlePrevSlide}>
                 <span>←</span>
@@ -347,7 +347,7 @@ const Home = () => {
       <section className="section join-us">
         <div className="container">
           <div className="join-us-content">
-            <h2 style={{color:"white"}}>Let's get started!</h2>
+            <h2 style={{ color: "white" }}>Let's get started!</h2>
             <Link to="/contact" className="btn join-btn">
               JOIN US <span className="arrow">→</span>
             </Link>

@@ -6,6 +6,10 @@ import useDocumentTitle from '../hooks/useDocumentTitle';
 const Research = () => {
   useDocumentTitle('Research');
 
+  useEffect (() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="research-page">
       <div className="research-hero">

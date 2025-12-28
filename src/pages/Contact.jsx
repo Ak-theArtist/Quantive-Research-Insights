@@ -7,8 +7,12 @@ import useAnimation from '../hooks/useAnimation';
 
 const Contact = () => {
   useDocumentTitle('Contact Us');
-  useAnimation(); 
+  useAnimation();
   const form = useRef();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -217,16 +221,23 @@ const Contact = () => {
       <section className="map-section animate fade-up">
         <div className="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14231.205162195803!2d78.0042035!3d27.1902135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747738c3f4d153%3A0x9b18c6a3693884fd!2sSanjay%20Palace%2C%20Hari%20Parwat%2C%20Agra%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1716554321987!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28310.864710652393!2d77.64790771701412!3d27.504788548333195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sShop%20No%2014%2C%201st%20Floor%2C%20Kaushiki%20Tower%2C%20In%20Front%20Of%20New%20Bus%20Stand%20Work%20Shop%2C%20Near%20State%20Bank%20Choraha%2C%20Mathura%2C%20Uttar%20Pradesh%20%20Pin-Code%3A%20281001!5e0!3m2!1sen!2sin!4v1766906603888!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            title="Our Location in Agra"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Our Location in Mathura"
           ></iframe>
         </div>
+
+        <div className="contact-address">
+          <p><strong>Address:</strong> Shop No 14, 1st Floor, Kaushiki Tower, In Front Of New Bus Stand Work Shop, Near State Bank Choraha, Mathura, Uttar Pradesh</p>
+          <p><strong>Pin-Code:</strong> 281001</p>
+        </div>
       </section>
+
     </div>
   );
 };

@@ -4,8 +4,14 @@ import image2 from '../assets/image2.png';
 import image3 from '../assets/image3.png';
 import image4 from '../assets/image4.webp';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import { useEffect } from 'react';
 
 const About = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   useDocumentTitle('About Us');
   return (
     <div className="about-page">
@@ -17,7 +23,7 @@ const About = () => {
           <p>Where Data Meets Decision</p>
         </div>
       </div>
-      
+
       {/* Why Choose Us Section */}
       <section className="section why-choose-us">
         <div className="container">
@@ -25,9 +31,9 @@ const About = () => {
             <div className="why-choose-text">
               <h2>Why Choose US?</h2>
               <p>
-                We know academic writing can feel like running a marathon with no finish line in sight. That's why we've 
-                developed services to walk with you every step of the way, from admission proposals to PhD theses, and 
-                even bibliometric reviews. Our tools like ReqRev and PlagSelect ensure your work is top-notch, original, and 
+                We know academic writing can feel like running a marathon with no finish line in sight. That's why we've
+                developed services to walk with you every step of the way, from admission proposals to PhD theses, and
+                even bibliometric reviews. Our tools like ReqRev and PlagSelect ensure your work is top-notch, original, and
                 meets all the right requirements no more guesswork.
               </p>
             </div>
@@ -37,7 +43,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Features Grid */}
       <section className="section features-grid">
         <div className="container">
@@ -46,27 +52,27 @@ const About = () => {
               <h3>Expertise and Specialization:</h3>
               <p>Our team excels in specialized academic research and corporate insights, delivering precise, high-quality solutions tailored to your needs.</p>
             </div>
-            
+
             <div className="feature-card">
               <h3>Our Quality Promise:</h3>
               <p>Every document undergoes a rigorous quality check to ensure accuracy, proper formatting, and complete originality.</p>
             </div>
-            
+
             <div className="feature-card">
               <h3>Timely Delivery, Guaranteed:</h3>
               <p>We understand the value of deadlines. Our team ensures on-time delivery without compromising quality.</p>
             </div>
-            
+
             <div className="feature-card">
               <h3>24/7 Support:</h3>
               <p>Our support team is available 24/7 to assist you with any queries or updates throughout the process.</p>
             </div>
-            
+
             <div className="feature-card">
               <h3>Confidentiality and Intellectual Property Protection:</h3>
               <p>We prioritize your privacy, maintaining strict confidentiality of all information and safeguarding your intellectual property rights.</p>
             </div>
-            
+
             <div className="feature-card">
               <h3>Our Commitment:</h3>
               <p>Our commitment extends beyond delivery. We offer free revisions and consultations to ensure your research is perfect.</p>
@@ -74,7 +80,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      
+
       {/* For Scholars and Businesses */}
       <section className="section audience-section">
         <div className="container">
@@ -88,7 +94,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="audience-card">
               <img src={image3} alt="For Businesses" />
               <div className="audience-content">
@@ -101,7 +107,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Research Excellence */}
       <section className="section excellence-section">
         <div className="container">

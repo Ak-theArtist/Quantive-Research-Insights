@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Services.css';
 import useDocumentTitle from '../hooks/useDocumentTitle';
@@ -9,6 +9,11 @@ import authenticityIcon from '../assets/Authenticity-icon.png';
 import publicationIcon from '../assets/publication-icon.png';
 
 const Services = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   useDocumentTitle('Our Services');
   const [activeTab, setActiveTab] = useState('academic');
 
@@ -31,9 +36,9 @@ const Services = () => {
           <div className="services-intro-content">
             <h2>How We Can Help You</h2>
             <p>
-              At Quantive Research Insights, we offer a comprehensive suite of research services 
-              designed to support academics, businesses, and organizations at every stage of their 
-              research journey. Our team of experts combines deep domain knowledge with methodological 
+              At Quantive Research Insights, we offer a comprehensive suite of research services
+              designed to support academics, businesses, and organizations at every stage of their
+              research journey. Our team of experts combines deep domain knowledge with methodological
               rigor to deliver insights that drive innovation and excellence.
             </p>
           </div>
@@ -43,19 +48,19 @@ const Services = () => {
       <section className="service-categories">
         <div className="container">
           <div className="service-tabs">
-            <button 
+            <button
               className={`tab-btn ${activeTab === 'academic' ? 'active' : ''}`}
               onClick={() => handleTabChange('academic')}
             >
               Academic Research
             </button>
-            <button 
+            <button
               className={`tab-btn ${activeTab === 'business' ? 'active' : ''}`}
               onClick={() => handleTabChange('business')}
             >
               Business Research
             </button>
-            <button 
+            <button
               className={`tab-btn ${activeTab === 'publication' ? 'active' : ''}`}
               onClick={() => handleTabChange('publication')}
             >
@@ -68,9 +73,9 @@ const Services = () => {
               <div className="service-tab-content">
                 <h3>Academic Research Services</h3>
                 <p>
-                  Our academic research services are designed to support scholars, students, and 
-                  researchers at every stage of their academic journey. From topic selection to 
-                  final publication, we provide comprehensive support to ensure your research 
+                  Our academic research services are designed to support scholars, students, and
+                  researchers at every stage of their academic journey. From topic selection to
+                  final publication, we provide comprehensive support to ensure your research
                   meets the highest standards of academic excellence.
                 </p>
                 <div className="services-grid">
@@ -124,8 +129,8 @@ const Services = () => {
               <div className="service-tab-content">
                 <h3>Business Research Services</h3>
                 <p>
-                  Our business research services help organizations make data-driven decisions, 
-                  identify market opportunities, and develop effective strategies. We combine 
+                  Our business research services help organizations make data-driven decisions,
+                  identify market opportunities, and develop effective strategies. We combine
                   rigorous research methodologies with industry expertise to deliver actionable insights.
                 </p>
                 <div className="services-grid">
@@ -165,8 +170,8 @@ const Services = () => {
               <div className="service-tab-content">
                 <h3>Publication Support Services</h3>
                 <p>
-                  Our publication support services help researchers navigate the complex process 
-                  of academic publishing. From journal selection to manuscript preparation and 
+                  Our publication support services help researchers navigate the complex process
+                  of academic publishing. From journal selection to manuscript preparation and
                   submission, we provide comprehensive support to increase your chances of publication.
                 </p>
                 <div className="services-grid">
