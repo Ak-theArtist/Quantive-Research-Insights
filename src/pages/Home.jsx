@@ -228,7 +228,7 @@ const Home = () => {
 
               <div className="stats-container">
                 <div className="stat-item">
-                  <h4>200+</h4>
+                  <h4>800+</h4>
                   <p>CLIENTS</p>
                 </div>
                 <div className="stat-item">
