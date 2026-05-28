@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import ReactPixel from 'react-facebook-pixel';
 import './Contact.css';
 import contactImage from '../assets/contact-img.png';
 import useDocumentTitle from '../hooks/useDocumentTitle';
@@ -51,7 +52,14 @@ const Contact = () => {
       );
 
       if (result.text === 'OK') {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+
+        ReactPixel.track('Lead');
+
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully.'
+        });
+
         // Reset form
         setFormData({
           name: '',
@@ -61,11 +69,17 @@ const Contact = () => {
           message: ''
         });
       } else {
-        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again later.' });
+        setSubmitStatus({
+          type: 'error',
+          message: 'Something went wrong. Please try again later.'
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitStatus({ type: 'error', message: 'Network error. Please check your connection and try again.' });
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.'
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -77,7 +91,9 @@ const Contact = () => {
         <div className="contact-hero-overlay"></div>
         <div className="container">
           <h1 className="animate fade-down">Contact Us</h1>
-          <p className="animate fade-up delay-200">Get in touch with our team for any inquiries or support</p>
+          <p className="animate fade-up delay-200">
+            Get in touch with our team for any inquiries or support
+          </p>
         </div>
       </div>
 
@@ -136,8 +152,17 @@ const Contact = () => {
               </div>
 
               <div className="social-links animate fade-up delay-500">
-                <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/quantive_research_insights/?igsh=MTRyZGN6ZW54YjVkaA%3D%3D&utm_source=qr" className="social-link" target='_blank'><i className="fab fa-instagram"></i></a>
+                <a href="#" className="social-link">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/quantive_research_insights/?igsh=MTRyZGN6ZW54YjVkaA%3D%3D&utm_source=qr"
+                  className="social-link"
+                  target='_blank'
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
 
@@ -233,11 +258,17 @@ const Contact = () => {
         </div>
 
         <div className="contact-address">
-          <p><strong>Address:</strong> Shop No 14, 1st Floor, Kaushiki Tower, In Front Of New Bus Stand Work Shop, Near State Bank Choraha, Mathura, Uttar Pradesh</p>
-          <p><strong>Pin-Code:</strong> 281001</p>
+          <p>
+            <strong>Address:</strong> Shop No 14, 1st Floor, Kaushiki Tower,
+            In Front Of New Bus Stand Work Shop, Near State Bank Choraha,
+            Mathura, Uttar Pradesh
+          </p>
+
+          <p>
+            <strong>Pin-Code:</strong> 281001
+          </p>
         </div>
       </section>
-
     </div>
   );
 };
