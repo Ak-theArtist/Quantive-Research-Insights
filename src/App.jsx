@@ -24,11 +24,11 @@ function AppWrapper() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  usePageTracking(); // ✅ Added for route tracking
+  usePageTracking(); 
 
   useEffect(() => {
-    ReactPixel.init('24308846782072737'); // ✅ Initialize Pixel
-    ReactPixel.pageView(); // ✅ First page load
+    ReactPixel.init('1069564609155027');
+    ReactPixel.pageView();
   }, []);
 
   useEffect(() => {
