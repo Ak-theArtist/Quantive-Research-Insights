@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import ReactPixel from 'react-facebook-pixel';
 import './Contact.css';
+import '../components/ContactModal.css';
+import contactServices from '../components/contactServices';
 import contactImage from '../assets/contact-img.png';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import useAnimation from '../hooks/useAnimation';
@@ -19,7 +21,8 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    city: '',
+    service: '',
     message: ''
   });
 
@@ -65,7 +68,8 @@ const Contact = () => {
           name: '',
           email: '',
           phone: '',
-          subject: '',
+          city: '',
+          service: '',
           message: ''
         });
       } else {
@@ -170,72 +174,101 @@ const Contact = () => {
               <h2 className="animate fade-up">Send Us a Message</h2>
 
               {submitStatus && (
-                <div className={`form-status ${submitStatus.type}`}>
+                <div className="qri-modal-status" role="status">
                   {submitStatus.message}
                 </div>
               )}
 
-              <form className="contact-form" ref={form} onSubmit={handleSubmit}>
-                <div className="form-group animate fade-up delay-100">
+              <form className="contact-form qri-modal-form" ref={form} onSubmit={handleSubmit}>
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-name">Full Name</label>
                   <input
+                    id="contact-page-name"
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Enter your full name"
                     required
                     value={formData.name}
                     onChange={handleChange}
                   />
                 </div>
 
-                <div className="form-group animate fade-up delay-200">
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-email">Email Address</label>
                   <input
+                    id="contact-page-email"
                     type="email"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder="Enter your email address"
                     required
                     value={formData.email}
                     onChange={handleChange}
                   />
                 </div>
 
-                <div className="form-group animate fade-up delay-300">
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-phone">Phone Number</label>
                   <input
+                    id="contact-page-phone"
                     type="tel"
                     name="phone"
-                    placeholder="Your Phone"
+                    placeholder="Enter your phone number"
+                    required
                     value={formData.phone}
                     onChange={handleChange}
                   />
                 </div>
 
-                <div className="form-group animate fade-up delay-400">
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-city">City</label>
                   <input
+                    id="contact-page-city"
                     type="text"
-                    name="subject"
-                    placeholder="Subject"
+                    name="city"
+                    placeholder="Enter your city"
                     required
-                    value={formData.subject}
+                    value={formData.city}
                     onChange={handleChange}
                   />
                 </div>
 
-                <div className="form-group animate fade-up delay-500">
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-service">Select Service</label>
+                  <select
+                    id="contact-page-service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Choose a service</option>
+                    {contactServices.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="qri-modal-group">
+                  <label htmlFor="contact-page-message">Your Message</label>
                   <textarea
+                    id="contact-page-message"
                     name="message"
-                    placeholder="Your Message"
-                    rows="5"
+                    placeholder="Describe your requirements..."
+                    rows="4"
                     required
                     value={formData.message}
                     onChange={handleChange}
-                  ></textarea>
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn btn-primary animate scale delay-500"
+                  className="qri-modal-submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
                 </button>
               </form>
             </div>

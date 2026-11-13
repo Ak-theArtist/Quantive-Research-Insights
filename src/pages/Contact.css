@@ -156,43 +156,8 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #003366;
-  outline: none;
-}
-
-.contact-form button {
-  background-color: #003366;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.contact-form button:hover {
-  background-color: #004080;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.contact-form .qri-modal-group label {
+  text-align: left;
 }
 
 .map-section {
@@ -205,31 +170,6 @@
 
 .map-container iframe {
   height: 100%;
-}
-
-/* Form status messages */
-.form-status {
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  font-weight: 500;
-}
-
-.form-status.success {
-  background-color: rgba(40, 167, 69, 0.1);
-  color: #28a745;
-  border: 1px solid rgba(40, 167, 69, 0.2);
-}
-
-.form-status.error {
-  background-color: rgba(220, 53, 69, 0.1);
-  color: #dc3545;
-  border: 1px solid rgba(220, 53, 69, 0.2);
-}
-
-.contact-form button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 /* Responsive styles */

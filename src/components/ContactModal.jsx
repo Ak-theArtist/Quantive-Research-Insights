@@ -1,167 +1,246 @@
-import { useState, useRef, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
-import './ContactModal.css';
+
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import emailjs from "@emailjs/browser";
+import contactServices from "./contactServices";
+import "./ContactModal.css";
+
+const initialFormData = {
+  name: "",
+  email: "",
+  phone: "",
+  city: "",
+  service: "",
+  message: "",
+};
 
 const ContactModal = ({ isOpen, onClose }) => {
-  const form = useRef();
-  const modalRef = useRef();
+  const [formData, setFormData] = useState(initialFormData);
+  const [status, setStatus] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
+  // Handle body scroll and Escape key
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape" && !isSending) {
         onClose();
       }
     };
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, isSending]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // Send enquiry through EmailJS
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("");
 
-    // Using environment variables for EmailJS credentials
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("Email configuration is missing. Please try again later.");
+      return;
+    }
+
+    setIsSending(true);
+
     try {
-      const result = await emailjs.sendForm(
+      await emailjs.send(
         serviceId,
         templateId,
-        form.current,
-        publicKey
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          city: formData.city,
+          service: formData.service,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        { publicKey }
       );
 
-      if (result.text === 'OK') {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again later.' });
-      }
+      setStatus("Your enquiry has been sent successfully!");
+      setFormData(initialFormData);
+
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus({ type: 'error', message: 'Network error. Please check your connection and try again.' });
+      console.error("EmailJS Error:", error);
+      setStatus("Unable to send your enquiry. Please try again.");
+
     } finally {
-      setIsSubmitting(false);
+      setIsSending(false);
     }
   };
 
   if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay">
-      <div className="modal-container" ref={modalRef}>
-        <div className="modal-header">
-          <h2>Contact Us</h2>
-          <button className="close-button" onClick={onClose}>×</button>
-        </div>
-        
-        <div className="modal-body">
-          {submitStatus && (
-            <div className={`form-status ${submitStatus.type}`}>
-              {submitStatus.message}
-            </div>
-          )}
+  return createPortal(
+    <div
+      className="qri-modal-overlay"
+      onMouseDown={(event) => {
+        if (
+          event.target === event.currentTarget &&
+          !isSending
+        ) {
+          onClose();
+        }
+      }}
+    >
+      <div
+        className="qri-modal-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="qri-modal-title"
+      >
+        {/* Header */}
+        <div className="qri-modal-header">
+          <div>
+            <h2 id="qri-modal-title">Get in Touch</h2>
+            <p>Tell us about your research requirements.</p>
+          </div>
 
-          <form className="contact-form" ref={form} onSubmit={handleSubmit}>
-            <div className="form-group">
+          <button
+            type="button"
+            className="qri-modal-close"
+            onClick={onClose}
+            disabled={isSending}
+            aria-label="Close contact form"
+          >
+            &times;
+          </button>
+        </div>
+
+        {/* Form */}
+        <div className="qri-modal-body">
+          <form
+            className="qri-modal-form"
+            onSubmit={handleSubmit}
+          >
+            <div className="qri-modal-group">
+              <label htmlFor="contact-name">Full Name</label>
               <input
+                id="contact-name"
                 type="text"
                 name="name"
-                placeholder="Your Name"
-                required
+                placeholder="Enter your full name"
                 value={formData.name}
                 onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="form-group">
+            <div className="qri-modal-group">
+              <label htmlFor="contact-email">Email Address</label>
               <input
+                id="contact-email"
                 type="email"
                 name="email"
-                placeholder="Your Email"
-                required
+                placeholder="Enter your email address"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="form-group">
+            <div className="qri-modal-group">
+              <label htmlFor="contact-phone">Phone Number</label>
               <input
+                id="contact-phone"
                 type="tel"
                 name="phone"
-                placeholder="Your Phone"
+                placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="form-group">
+            <div className="qri-modal-group">
+              <label htmlFor="contact-city">City</label>
               <input
+                id="contact-city"
                 type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-                value={formData.subject}
+                name="city"
+                placeholder="Enter your city"
+                value={formData.city}
                 onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="form-group">
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                rows="4"
+            <div className="qri-modal-group">
+              <label htmlFor="contact-service">Select Service</label>
+              <select
+                id="contact-service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
                 required
+              >
+                <option value="">Choose a service</option>
+
+                {contactServices.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="qri-modal-group">
+              <label htmlFor="contact-message">Your Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                placeholder="Describe your requirements..."
                 value={formData.message}
                 onChange={handleChange}
-              ></textarea>
+                rows="4"
+                required
+              />
             </div>
+
+            {status && (
+              <p className="qri-modal-status" role="status">
+                {status}
+              </p>
+            )}
 
             <button
               type="submit"
-              className="btn btn-primary"
-              disabled={isSubmitting}
+              className="qri-modal-submit"
+              disabled={isSending}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSending ? "Sending..." : "Submit Enquiry"}
             </button>
           </form>
         </div>
       </div>
-    </div>
+    </div>,
+
+    document.body
   );
 };
 
