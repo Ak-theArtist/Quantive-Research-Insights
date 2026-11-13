@@ -37,8 +37,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <p><strong>Email:</strong> quantiveresearchinsights@gmail.com</p>
             <p><strong>Phone:</strong> +91-74175 77804</p>
-            <p><strong>Address:</strong> Shop No 14, 1st Floor, Kaushiki Tower, In Front Of New Bus Stand Work Shop, Near State Bank Choraha, Mathura, Uttar Pradesh</p>
-            <p><strong>Pin-Code:</strong> 281001</p>
+            <p><strong>Address:</strong> Office No 14, 2nd Floor, Kaushiki Tower, In Front of New Bus Stand Work Shop, Near State Bank Chouraha, Mathura, Uttar Pradesh, 281001</p>
           </div>
         </div>
 

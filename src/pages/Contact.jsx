@@ -119,8 +119,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h3>Address</h3>
-                    <p>Shop No 14, 1st Floor, Kaushiki Tower, In Front Of New Bus Stand Work Shop, Near State Bank Choraha, Mathura, Uttar Pradesh</p>
-                    <p>Pin-Code: 281001</p>
+                    <p>Office No 14, 2nd Floor, Kaushiki Tower, In Front of New Bus Stand Work Shop, Near State Bank Chouraha, Mathura, Uttar Pradesh, 281001</p>
                   </div>
                 </div>
 
@@ -279,7 +278,7 @@ const Contact = () => {
       <section className="map-section animate fade-up">
         <div className="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28310.864710652393!2d77.64790771701412!3d27.504788548333195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sShop%20No%2014%2C%201st%20Floor%2C%20Kaushiki%20Tower%2C%20In%20Front%20Of%20New%20Bus%20Stand%20Work%20Shop%2C%20Near%20State%20Bank%20Choraha%2C%20Mathura%2C%20Uttar%20Pradesh%20%20Pin-Code%3A%20281001!5e0!3m2!1sen!2sin!4v1766906603888!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=Office%20No%2014%2C%202nd%20Floor%2C%20Kaushiki%20Tower%2C%20In%20Front%20of%20New%20Bus%20Stand%20Work%20Shop%2C%20Near%20State%20Bank%20Chouraha%2C%20Mathura%2C%20Uttar%20Pradesh%2C%20281001&output=embed"
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -292,13 +291,9 @@ const Contact = () => {
 
         <div className="contact-address">
           <p>
-            <strong>Address:</strong> Shop No 14, 1st Floor, Kaushiki Tower,
-            In Front Of New Bus Stand Work Shop, Near State Bank Choraha,
-            Mathura, Uttar Pradesh
-          </p>
-
-          <p>
-            <strong>Pin-Code:</strong> 281001
+            <strong>Address:</strong> Office No 14, 2nd Floor, Kaushiki Tower,
+            In Front of New Bus Stand Work Shop, Near State Bank Chouraha,
+            Mathura, Uttar Pradesh, 281001
           </p>
         </div>
       </section>
